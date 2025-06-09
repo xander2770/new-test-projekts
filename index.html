@@ -2,94 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Web Shop Mockup</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f8f8;
-        }
-        header {
-            background-color: #222;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        }
-        .container {
-            display: flex;
-            margin: 2rem;
-        }
-        .products, .cart {
-            flex: 1;
-            margin: 0 1rem;
-            background: white;
-            padding: 1rem;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .product {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.5rem;
-        }
-        button {
-            cursor: pointer;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        .total {
-            font-weight: bold;
-            margin-top: 1rem;
-        }
-    </style>
+    <title>ALL IN ONE CALCULATOR</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Simple Web Shop Mockup</h1>
+        <h1>ALL IN ONE CALCULATOR</h1>
     </header>
-    <div class="container">
-        <div class="products">
-            <h2>Products</h2>
-            <div class="product" data-name="T-shirt" data-price="10">
-                <span>T-shirt</span>
-                <span>$10</span>
-                <button onclick="addToCart(this.parentElement)">Add to cart</button>
-            </div>
-            <div class="product" data-name="Hat" data-price="15">
-                <span>Hat</span>
-                <span>$15</span>
-                <button onclick="addToCart(this.parentElement)">Add to cart</button>
-            </div>
-            <div class="product" data-name="Mug" data-price="8">
-                <span>Mug</span>
-                <span>$8</span>
-                <button onclick="addToCart(this.parentElement)">Add to cart</button>
-            </div>
+    <main>
+        <h2>Welcome!</h2>
+        <input type="text" id="inputField" placeholder="what do you want to calculate?">
+        <h3>Dont know look here:</h3>
+        <div class="topics-container" id="topics"></div>
+        <div class="topic-detail-page" id="topicDetail">
+            <button id="backToTopics" style="display:none;">&larr; Back</button>
+            <div id="topicDetailContent"></div>
         </div>
-        <div class="cart">
-            <h2>Your Cart</h2>
-            <ul id="cart-items"></ul>
-            <div class="total">Total: $<span id="total">0</span></div>
-        </div>
-    </div>
-    <script>
-        const cartItems = document.getElementById('cart-items');
-        const totalEl = document.getElementById('total');
-        let total = 0;
-
-        function addToCart(productEl) {
-            const name = productEl.getAttribute('data-name');
-            const price = parseFloat(productEl.getAttribute('data-price'));
-            const li = document.createElement('li');
-            li.textContent = `${name} - $${price}`;
-            cartItems.appendChild(li);
-            total += price;
-            totalEl.textContent = total.toFixed(2);
-        }
-    </script>
+    </main>
+    <footer>
+        <p>Site Footer</p>
+    </footer>
 </body>
+    <script src="index.js"></script>
 </html>
